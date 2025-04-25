@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "title": "Project 1",
+        "description": "Details about Project 1...",
+        "skills": [
+            { "name": "HTML", "percentage": 90 },
+            { "name": "CSS", "percentage": 85 },
+            { "name": "JavaScript", "percentage": 80 }
+        ],
+        "rating": 4.5
+    },
+    {
+        "id": 2,
+        "title": "Project 2",
+        "description": "Details about Project 2...",
+        "skills": [
+            { "name": "React", "percentage": 95 },
+            { "name": "Node.js", "percentage": 90 },
+            { "name": "MongoDB", "percentage": 85 }
+        ],
+        "rating": 4.8
+    }
+]
