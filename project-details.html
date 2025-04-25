@@ -1,18 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Details</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Project Details | Alex Smith</title>
+  <meta content="Python developer project details" name="description">
+  <meta content="Python, Projects, Development" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Project Details Styles */
+    .project-header {
+      position: relative;
+      background-color: #f8f9fa;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    
+    .project-header-img {
+      height: 300px;
+      width: 100%;
+      object-fit: cover;
+    }
+    
+    .project-title-box {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 30px;
+      color: white;
+    }
+    
+    .tech-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      border-radius: 50px;
+      background-color: rgba(78, 115, 223, 0.1);
+      color: #4e73df;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .tech-badge:hover {
+      background-color: #4e73df;
+      color: white;
+    }
+    
+    .project-meta-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      color: #666;
+    }
+    
+    .project-meta-item i {
+      color: #4e73df;
+      font-size: 18px;
+      margin-right: 12px;
+      width: 24px;
+      text-align: center;
+    }
+    
+    .project-info {
+      background-color: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+    
+    .project-screenshots {
+      margin-top: 40px;
+    }
+    
+    .screenshot-item {
+      margin-bottom: 30px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .next-prev-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid #eee;
+    }
+    
+    .nav-link {
+      display: flex;
+      align-items: center;
+      color: #4e73df;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      color: #2e59d9;
+    }
+    
+    .nav-link.prev i {
+      margin-right: 10px;
+    }
+    
+    .nav-link.next i {
+      margin-left: 10px;
+    }
+    
+    .back-to-projects {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container mt-5">
-        <h1>Project Title</h1>
-        <p class="lead">Details about the selected project...</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu suscipit orci. Donec molestie velit id libero blandit, quis suscipit urna suscipit.</p>
-        <a href="index.html#portfolio" class="btn btn-primary">Back to Projects</a>
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img position-relative mx-auto mt-4 mb-3">
+      <div class="profile-bg-circle position-absolute" style="width: 130px; height: 130px; border-radius: 50%; background: linear-gradient(135deg, #4e73df, #224abe); top: -5px; left: -5px; z-index: 0;"></div>
+      <img src="assets/img/my-profile-img.jpg" alt="Profile" class="img-fluid rounded-circle position-relative" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #ffffff; z-index: 1;">
+      <div class="profile-badge position-absolute bg-success rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; bottom: 5px; right: 10px; border: 3px solid #ffffff; z-index: 2;">
+        <i class="bi bi-check-lg text-white" style="font-size: 16px;"></i>
+      </div>
     </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename mb-0 fw-bold" style="font-size: 24px; background: linear-gradient(135deg, #4e73df, #224abe); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Alex Smith</h1>
+    </a>
+    <p class="text-center small mb-3" style="color: #4e73df;">Python Developer & Consultant</p>
+
+    <div class="social-links d-flex justify-content-center gap-3 mb-4">
+      <a href="#" class="linkedin d-flex align-items-center justify-content-center rounded-circle" style="width: 36px; height: 36px; background: rgba(78, 115, 223, 0.2); color: #4e73df; transition: all 0.3s ease;">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href="#" class="github d-flex align-items-center justify-content-center rounded-circle" style="width: 36px; height: 36px; background: rgba(78, 115, 223, 0.2); color: #4e73df; transition: all 0.3s ease;">
+        <i class="bi bi-github"></i>
+      </a>
+    </div>
+
+    <nav id="navmenu" class="navmenu mb-4">
+      <ul class="list-unstyled ps-0 mb-0">
+        <li class="nav-item mb-2">
+          <a href="index.html#about" class="nav-link d-flex align-items-center py-2 px-3 rounded" style="transition: all 0.3s ease;">
+            <div class="nav-icon d-flex align-items-center justify-content-center me-3 rounded-circle" style="width: 34px; height: 34px; background: rgba(78, 115, 223, 0.2);">
+              <i class="bi bi-person navicon text-primary"></i>
+            </div>
+            <span>About</span>
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="index.html#resume" class="nav-link d-flex align-items-center py-2 px-3 rounded" style="transition: all 0.3s ease;">
+            <div class="nav-icon d-flex align-items-center justify-content-center me-3 rounded-circle" style="width: 34px; height: 34px; background: rgba(78, 115, 223, 0.2);">
+              <i class="bi bi-file-earmark-text navicon text-primary"></i>
+            </div>
+            <span>Resume</span>
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="index.html#project" class="nav-link d-flex align-items-center py-2 px-3 rounded active" style="background: rgba(78, 115, 223, 0.1); transition: all 0.3s ease;">
+            <div class="nav-icon d-flex align-items-center justify-content-center me-3 rounded-circle" style="width: 34px; height: 34px; background: rgba(78, 115, 223, 0.2);">
+              <i class="bi bi-images navicon text-primary"></i>
+            </div>
+            <span>Projects</span>
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="index.html#skills" class="nav-link d-flex align-items-center py-2 px-3 rounded" style="transition: all 0.3s ease;">
+            <div class="nav-icon d-flex align-items-center justify-content-center me-3 rounded-circle" style="width: 34px; height: 34px; background: rgba(78, 115, 223, 0.2);">
+              <i class="bi bi-tools navicon text-primary"></i>
+            </div>
+            <span>Skills</span>
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="index.html#services" class="nav-link d-flex align-items-center py-2 px-3 rounded" style="transition: all 0.3s ease;">
+            <div class="nav-icon d-flex align-items-center justify-content-center me-3 rounded-circle" style="width: 34px; height: 34px; background: rgba(78, 115, 223, 0.2);">
+              <i class="bi bi-hdd-stack navicon text-primary"></i>
+            </div>
+            <span>Services</span>
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="index.html#contact" class="nav-link d-flex align-items-center py-2 px-3 rounded" style="transition: all 0.3s ease;">
+            <div class="nav-icon d-flex align-items-center justify-content-center me-3 rounded-circle" style="width: 34px; height: 34px; background: rgba(78, 115, 223, 0.2);">
+              <i class="bi bi-envelope navicon text-primary"></i>
+            </div>
+            <span>Contact</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    <div class="mt-auto mb-4 text-center">
+      <a href="index.html#contact" class="btn btn-primary px-4 py-2 rounded-pill" style="background: linear-gradient(135deg, #4e73df, #224abe); border: none; box-shadow: 0 4px 15px rgba(78, 115, 223, 0.3);">Hire Me</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <div class="container">
+        <!-- Project Header -->
+        <div class="project-header" data-aos="fade-up">
+          <img src="assets/img/portfolio/app-1.jpg" alt="Project Header" class="project-header-img" id="project-header-img">
+          <div class="project-title-box">
+            <h1 id="project-title">E-Commerce Platform</h1>
+            <p id="project-subtitle">A full-featured online store built with Django and Python</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+            <!-- Project Info -->
+            <div class="project-info">
+              <h2>Project Overview</h2>
+              <p id="project-overview">This is a comprehensive e-commerce platform built with Django that provides everything needed for an online store. The system includes user authentication, product catalog, shopping cart, checkout with payment integration, and an admin dashboard for managing products, orders, and customers.</p>
+              
+              <h3 class="mt-4">Key Features</h3>
+              <ul id="project-features">
+                <li><strong>User Management:</strong> Registration, authentication, profile management, and order history</li>
+                <li><strong>Product Catalog:</strong> Categories, search, filtering, and sorting functionality</li>
+                <li><strong>Shopping Cart:</strong> Add/remove items, update quantities, save for later</li>
+                <li><strong>Checkout System:</strong> Multi-step checkout with address validation and payment processing</li>
+                <li><strong>Admin Dashboard:</strong> Inventory management, order processing, sales reports</li>
+                <li><strong>API Integration:</strong> Shipping calculators, payment gateways, and tax calculation</li>
+              </ul>
+              
+              <h3 class="mt-4">Technical Implementation</h3>
+              <p id="project-implementation">The system is built using Django for the backend with PostgreSQL as the database. The frontend uses a combination of Django templates, Bootstrap for responsive design, and JavaScript for interactive elements. Payment processing is handled through integration with Stripe API. The entire application is containerized with Docker for easy deployment and scaling.</p>
+            </div>
+            
+            <!-- Project Screenshots -->
+            <div class="project-screenshots">
+              <h3 class="mb-4">Project Screenshots</h3>
+              <div class="row g-4" id="project-screenshots">
+                <div class="col-md-6">
+                  <div class="screenshot-item">
+                    <a href="assets/img/portfolio/app-1.jpg" class="glightbox" data-gallery="project-gallery">
+                      <img src="assets/img/portfolio/app-1.jpg" alt="Screenshot 1" class="img-fluid">
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="screenshot-item">
+                    <a href="assets/img/portfolio/product-1.jpg" class="glightbox" data-gallery="project-gallery">
+                      <img src="assets/img/portfolio/product-1.jpg" alt="Screenshot 2" class="img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Next/Prev Navigation -->
+            <div class="next-prev-nav">
+              <a href="#" class="nav-link prev" id="prev-project">
+                <i class="bi bi-arrow-left"></i>
+                <span>Previous Project</span>
+              </a>
+              <a href="#" class="nav-link next" id="next-project">
+                <span>Next Project</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+            
+            <div class="back-to-projects">
+              <a href="index.html#project" class="btn btn-outline-primary rounded-pill px-4">
+                <i class="bi bi-grid me-2"></i> Back to All Projects
+              </a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <!-- Project Sidebar -->
+            <div class="project-sidebar">
+              <div class="project-info">
+                <h3>Project Details</h3>
+                
+                <div class="project-meta-item">
+                  <i class="bi bi-calendar3"></i>
+                  <div>
+                    <strong>Completion Date</strong>
+                    <div id="project-date">March 2023</div>
+                  </div>
+                </div>
+                
+                <div class="project-meta-item">
+                  <i class="bi bi-person"></i>
+                  <div>
+                    <strong>Client</strong>
+                    <div id="project-client">Retail Business</div>
+                  </div>
+                </div>
+                
+                <div class="project-meta-item">
+                  <i class="bi bi-clock"></i>
+                  <div>
+                    <strong>Project Duration</strong>
+                    <div id="project-duration">3 months</div>
+                  </div>
+                </div>
+                
+                <div class="project-meta-item">
+                  <i class="bi bi-github"></i>
+                  <div>
+                    <strong>Source Code</strong>
+                    <div><a href="#" target="_blank" id="project-github">View on GitHub</a></div>
+                  </div>
+                </div>
+                
+                <div class="mt-4">
+                  <h4>Technologies Used</h4>
+                  <div id="project-technologies">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Django</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">Bootstrap</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">AWS</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Contact CTA -->
+              <div class="project-info mt-4">
+                <h4>Interested in a similar project?</h4>
+                <p>Let's discuss how I can help you build a custom solution for your business needs.</p>
+                <a href="index.html#contact" class="btn btn-primary w-100 rounded-pill">Contact Me</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Alex Smith</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  
+  <!-- Project Details Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get project ID from URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectId = urlParams.get('project');
+      
+      // Project data
+      const projects = {
+        'ecommerce': {
+          title: 'E-Commerce Platform',
+          subtitle: 'A full-featured online store built with Django and Python',
+          headerImage: 'assets/img/portfolio/app-1.jpg',
+          overview: 'This is a comprehensive e-commerce platform built with Django that provides everything needed for an online store. The system includes user authentication, product catalog, shopping cart, checkout with payment integration, and an admin dashboard for managing products, orders, and customers.',
+          features: [
+            '<strong>User Management:</strong> Registration, authentication, profile management, and order history',
+            '<strong>Product Catalog:</strong> Categories, search, filtering, and sorting functionality',
+            '<strong>Shopping Cart:</strong> Add/remove items, update quantities, save for later',
+            '<strong>Checkout System:</strong> Multi-step checkout with address validation and payment processing',
+            '<strong>Admin Dashboard:</strong> Inventory management, order processing, sales reports',
+            '<strong>API Integration:</strong> Shipping calculators, payment gateways, and tax calculation'
+          ],
+          implementation: 'The system is built using Django for the backend with PostgreSQL as the database. The frontend uses a combination of Django templates, Bootstrap for responsive design, and JavaScript for interactive elements. Payment processing is handled through integration with Stripe API. The entire application is containerized with Docker for easy deployment and scaling.',
+          screenshots: [
+            'assets/img/portfolio/app-1.jpg',
+            'assets/img/portfolio/product-1.jpg'
+          ],
+          date: 'March 2023',
+          client: 'Retail Business',
+          duration: '3 months',
+          github: 'github.com/alexsmith/ecommerce-platform',
+          technologies: ['Python', 'Django', 'PostgreSQL', 'JavaScript', 'Bootstrap', 'Docker', 'AWS']
+        },
+        'data-analytics': {
+          title: 'Data Analytics Dashboard',
+          subtitle: 'Interactive business intelligence platform with real-time analytics',
+          headerImage: 'assets/img/portfolio/product-1.jpg',
+          overview: 'This data analytics dashboard provides businesses with real-time insights into their operations. It processes data from multiple sources, performs complex analysis, and presents information through interactive visualizations that help stakeholders make informed decisions.',
+          features: [
+            '<strong>Data Integration:</strong> Connects with multiple data sources including databases, APIs, and file systems',
+            '<strong>Real-time Analytics:</strong> Processes and analyzes data as it arrives for up-to-date insights',
+            '<strong>Interactive Visualizations:</strong> Customizable charts, graphs, and tables with drill-down capabilities',
+            '<strong>Automated Reporting:</strong> Scheduled report generation and distribution to stakeholders',
+            '<strong>User Permissions:</strong> Role-based access control for data security',
+            '<strong>Export Capabilities:</strong> Export data and reports in various formats (PDF, Excel, CSV)'
+          ],
+          implementation: 'The dashboard is built with Flask for the backend API and data processing. Pandas and NumPy handle the data manipulation and analysis, while D3.js and Chart.js create the interactive visualizations. Data is stored in PostgreSQL with TimescaleDB for time-series data. The application uses Celery for background task processing and Redis for caching.',
+          screenshots: [
+            'assets/img/portfolio/product-1.jpg',
+            'assets/img/portfolio/branding-1.jpg'
+          ],
+          date: 'June 2023',
+          client: 'Financial Services Firm',
+          duration: '4 months',
+          github: 'github.com/alexsmith/data-analytics-dashboard',
+          technologies: ['Python', 'Flask', 'Pandas', 'NumPy', 'D3.js', 'PostgreSQL', 'Redis', 'Celery']
+        },
+        'workflow-automation': {
+          title: 'Workflow Automation System',
+          subtitle: 'Task scheduling and document processing system that automates business workflows',
+          headerImage: 'assets/img/portfolio/branding-1.jpg',
+          overview: 'This workflow automation system streamlines business processes by automating repetitive tasks and document processing. It integrates with existing business systems to create efficient workflows, reduce manual intervention, and increase productivity.',
+          features: [
+            '<strong>Document Processing:</strong> Automated extraction and processing of data from various document formats',
+            '<strong>Task Scheduling:</strong> Time-based and event-driven task execution with dependencies',
+            '<strong>Workflow Designer:</strong> Visual interface to design and manage complex workflows',
+            '<strong>System Integration:</strong> Connect with existing business systems and third-party services',
+            '<strong>Notification System:</strong> Email and in-app notifications for task completion and errors',
+            '<strong>Audit Logging:</strong> Comprehensive logging of all system activities for compliance and debugging'
+          ],
+          implementation: 'The system is built with Python as the core language, using Celery for task scheduling and execution. Document processing leverages OCR libraries and natural language processing. The backend API is built with FastAPI, and the workflow designer uses React for the frontend. MongoDB stores workflow configurations and system data, while Redis handles message queuing.',
+          screenshots: [
+            'assets/img/portfolio/branding-1.jpg',
+            'assets/img/portfolio/app-1.jpg'
+          ],
+          date: 'November 2022',
+          client: 'Legal Services Provider',
+          duration: '5 months',
+          github: 'github.com/alexsmith/workflow-automation',
+          technologies: ['Python', 'Celery', 'Redis', 'MongoDB', 'FastAPI', 'React', 'Docker', 'OCR']
+        }
+      };
+      
+      // Navigation setup
+      const projectIds = Object.keys(projects);
+      const currentIndex = projectIds.indexOf(projectId);
+      const prevIndex = currentIndex > 0 ? currentIndex - 1 : projectIds.length - 1;
+      const nextIndex = currentIndex < projectIds.length - 1 ? currentIndex + 1 : 0;
+      
+      // Set up navigation links
+      document.getElementById('prev-project').href = `project-details.html?project=${projectIds[prevIndex]}`;
+      document.getElementById('next-project').href = `project-details.html?project=${projectIds[nextIndex]}`;
+      
+      // Populate project data
+      if (projects[projectId]) {
+        const project = projects[projectId];
+        
+        // Update page title
+        document.title = `${project.title} | Alex Smith`;
+        
+        // Update header section
+        document.getElementById('project-header-img').src = project.headerImage;
+        document.getElementById('project-title').textContent = project.title;
+        document.getElementById('project-subtitle').textContent = project.subtitle;
+        
+        // Update overview section
+        document.getElementById('project-overview').textContent = project.overview;
+        
+        // Update features list
+        const featuresList = document.getElementById('project-features');
+        featuresList.innerHTML = '';
+        project.features.forEach(feature => {
+          const li = document.createElement('li');
+          li.innerHTML = feature;
+          featuresList.appendChild(li);
+        });
+        
+        // Update implementation section
+        document.getElementById('project-implementation').textContent = project.implementation;
+        
+        // Update screenshots
+        const screenshotsContainer = document.getElementById('project-screenshots');
+        screenshotsContainer.innerHTML = '';
+        project.screenshots.forEach((screenshot, index) => {
+          const col = document.createElement('div');
+          col.className = 'col-md-6';
+          col.innerHTML = `
+            <div class="screenshot-item">
+              <a href="${screenshot}" class="glightbox" data-gallery="project-gallery">
+                <img src="${screenshot}" alt="Screenshot ${index + 1}" class="img-fluid">
+              </a>
+            </div>
+          `;
+          screenshotsContainer.appendChild(col);
+        });
+        
+        // Update sidebar details
+        document.getElementById('project-date').textContent = project.date;
+        document.getElementById('project-client').textContent = project.client;
+        document.getElementById('project-duration').textContent = project.duration;
+        document.getElementById('project-github').textContent = 'View on GitHub';
+        document.getElementById('project-github').href = `https://${project.github}`;
+        
+        // Update technologies
+        const techContainer = document.getElementById('project-technologies');
+        techContainer.innerHTML = '';
+        project.technologies.forEach(tech => {
+          const span = document.createElement('span');
+          span.className = 'tech-badge';
+          span.textContent = tech;
+          techContainer.appendChild(span);
+        });
+        
+        // Initialize lightbox for screenshots
+        const lightbox = GLightbox({
+          selector: '.glightbox'
+        });
+      } else {
+        // Redirect to projects page if project not found
+        window.location.href = 'index.html#project';
+      }
+    });
+  </script>
+
 </body>
+
 </html>
